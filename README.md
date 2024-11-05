@@ -26,4 +26,4 @@ pillow
 tensorflow
 scikit-learn
 xgboost
-matplotlib (optional, for debugging visualization)
+matplotlib
