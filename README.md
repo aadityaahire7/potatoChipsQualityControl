@@ -2,6 +2,7 @@
 This project provides a complete pipeline for defect detection in potato slices, designed for food processing applications. The pipeline includes preprocessing potato slice images, training two deep learning models (DenseNet121 and EfficientNetB3) for classification, and using an XGBoost meta-classifier to enhance prediction accuracy through model stacking.
 
 Project Overview
+
 Image Preprocessing: Images of potato slices are resized, adjusted for brightness, and saved with a specified DPI to ensure consistency.
 
 Model Training: Uses two pre-trained models, DenseNet121 and EfficientNetB3, which are fine-tuned on the potato slice dataset.
@@ -27,3 +28,30 @@ tensorflow
 scikit-learn
 xgboost
 matplotlib
+
+Steps to Run the Project
+Clone the Repository: Download the project to your local machine.
+
+
+git clone <repository-url>
+cd <project-directory>
+
+
+pip install opencv-python-headless numpy pillow tensorflow scikit-learn xgboost matplotlib
+
+Prepare Dataset: Ensure your dataset is organized as follows:
+
+
+dataset/
+├── Processed Defected Slices/  # Images of defected potato slices
+└── Processed Potato Slices/    # Images of healthy potato slices
+
+Run the Image Preprocessing Script: This script will resize, adjust brightness, and save images in the Processed Potato slice/ folder with a DPI of 300.
+
+python preprocess_images.py
+Run the Training Script: Train the DenseNet121 and EfficientNetB3 models, followed by the XGBoost meta-classifier.
+
+
+python train_model.py
+
+Evaluate the Model: Check the accuracy and confusion matrix after training to assess model performance.
